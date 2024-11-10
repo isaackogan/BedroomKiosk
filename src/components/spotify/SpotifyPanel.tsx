@@ -32,7 +32,7 @@ export default function () {
           setTimeout(() => {
             updatePlaybackState();
           }, remainingTime * 1000);
-          }
+        }
 
       });
     }, 10 * 1000);
@@ -86,11 +86,11 @@ export default function () {
     const device = await getActiveDevice();
     if (device) {
       if (playbackState.is_playing) {
-       try {
-         await sdk.player.pausePlayback(device.id!);
-       } catch (ex) {
+        try {
+          await sdk.player.pausePlayback(device.id!);
+        } catch (ex) {
           // spotify is broken and sometimes throws an error when
-       }
+        }
       } else {
         try {
           await sdk.player.startResumePlayback(device.id!);

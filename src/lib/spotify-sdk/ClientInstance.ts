@@ -19,6 +19,8 @@ class NextAuthStrategy implements IAuthStrategy {
       return {} as AccessToken;
     }
 
+    // If we fail to refresh the access token, we need to sign in again
+    // Then we return the new access token
     if (session?.error === "RefreshAccessTokenError") {
       await signIn();
       return this.getAccessToken();

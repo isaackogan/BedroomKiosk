@@ -14,7 +14,7 @@ app.prepare().then(() => {
   // Create HTTP server
   const httpServer = createServer(handler);
 
-  // Load the server
+  // Load the serverm ru
   httpServer
       .once("error", (err) => {
         console.error(err);

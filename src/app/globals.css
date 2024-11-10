@@ -30,3 +30,10 @@ body {
   border-radius: 8px;
   padding: 6px 10px;
 }
+
+@media(max-width: 900px) {
+  body,html {
+    cursor: none;
+  }
+}
+

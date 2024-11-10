@@ -15,8 +15,6 @@ export default async function Home() {
     redirect("/login")
   }
 
-  console.log('sess', session);
-
   return (
       <div className={"flex flex-col gap-3 p-3 h-[100%]"}>
         <TopPanel/>

@@ -4,7 +4,8 @@ export const authURL = (() => {
   const url = new URL("https://accounts.spotify.com/authorize");
 
   const scopes = [
-    "user-read-playback-state"
+    "user-read-playback-state",
+    "user-modify-playback-state"
   ];
 
   url.searchParams.append("scope", scopes.join(" "));

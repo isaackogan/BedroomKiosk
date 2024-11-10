@@ -33,7 +33,7 @@ export default function () {
   const temperature = Math.round(currentWeather.main.temp - 273.15);
   const minTemperature = Math.round(currentWeather.main.temp_min - 273.15);
   const maxTemperature = Math.round(currentWeather.main.temp_max - 273.15);
-  const humidity = currentWeather.main.humidity;
+  const feelsTemperature = Math.round(currentWeather.main.feels_like - 273.15);
 
   const icon = `http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@4x.png`;
 
@@ -43,7 +43,7 @@ export default function () {
           <img alt={""} className={styles.weatherIcon} key={icon} src={icon}/>
           <span className={"text-4xl"}>{temperature}°C</span>
         </div>
-        <span className={"text-gray-69"}>Max {maxTemperature}°C{bullet}Min {minTemperature} °C{bullet}Humidity {humidity}%</span>
+        <span className={"text-gray-69"}>Max {maxTemperature}°C{bullet}Min {minTemperature} °C{bullet}Feels {feelsTemperature} °C</span>
       </div>
   )
 }

@@ -34,7 +34,7 @@ const ProgressBar: FC<IProgressBar> = ({ isPlaying, progressMs, durationMs }) =>
       <div className={styles.progressBarContainer}>
         <span className={styles.progressBarCurrentTime}>{formatTime(progressRef.current)}</span>
         <div className={styles.progressBar}>
-          <div className={styles.progressBarFill} style={{ width: `${progress}%` }}>&nbsp;</div>
+          <div className={styles.progressBarFill} style={{ width: `${Math.min(progress, 100)}%` }}>&nbsp;</div>
         </div>
         <span className={styles.progressBarSongLength}>{formatTime(durationMs)}</span>
       </div>

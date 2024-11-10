@@ -22,19 +22,22 @@ export default function RomePanel() {
   const [daysLeft, setDaysLeft] = useState<number>(0);
   const romeDate = 1752811209;
 
+  function updateRomeDate() {
+    const currentDate = moment().tz("America/Toronto");
+    const daysUntilRome = Math.floor((romeDate - (currentDate?.unix() || 0)) / 86400);
+    setDaysLeft(daysUntilRome);
+
+  }
   useEffect(
       () => {
+        updateRomeDate();
         const interval = setInterval(() => {
-          const currentDate = moment().tz("America/Toronto");
-          const daysUntilRome = Math.floor((romeDate - (currentDate?.unix() || 0)) / 86400);
-          setDaysLeft(daysUntilRome);
-        }, 1000);
+          updateRomeDate();
+        }, 1000 * 60);
         return () => clearInterval(interval);
       },
       []
   );
-
-
 
   return (
       <div className={"panel flex-grow flex flex-col justify-center items-center gap-y-3"} style={{fontFamily: "Cantata One"}}>

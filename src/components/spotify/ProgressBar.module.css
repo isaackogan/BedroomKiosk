@@ -1,0 +1,31 @@
+.progressBarCurrentTime, .progressBarSongLength {
+    font-size: 16px;
+}
+
+.progressBarContainer {
+    margin-top: 15px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-gray);
+    gap: 10px;
+}
+
+.progressBar {
+    flex-grow: 1;
+    background: var(--color-gray);
+    height: 8px;
+    border-radius: 50px;
+    display: block;
+    position: relative;
+}
+
+.progressBarFill {
+    border-radius: 50px;
+    background: #0c4665;
+    position: relative;
+    display: flex;
+    line-height: 8px;
+    transition: width 200ms;
+}

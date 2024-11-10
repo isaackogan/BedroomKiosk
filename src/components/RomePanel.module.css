@@ -1,0 +1,26 @@
+.dayCount {
+    position: relative;
+    background: #bea263;
+    color: #2c2319;
+    width: 50px;
+    text-align: center;
+}
+
+.dayCountText {
+    color: #96724e;
+    font-weight: bold;
+    font-size: 26px;
+    font-family: "Roboto", Sana;
+}
+
+.dayCount::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1.5px; /* Thickness of the line */
+    opacity: 0.8;
+    background-color: #26201a; /* Color of the line */
+}
